@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "bot-checker"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiogram = "^3.3.0"
+python-dotenv = "^1.0.0"
+sqlalchemy = "^2.0.25"
+aiosqlite = "^0.19.0"
+alembic = "^1.13.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

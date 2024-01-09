@@ -1,0 +1,11 @@
+[Unit]
+Description=bot checker
+
+[Service]
+ExecStart=/root/bot_checker/start.sh
+WorkingDirectory=/root/bot_checker
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
