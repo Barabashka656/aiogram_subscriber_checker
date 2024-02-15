@@ -15,12 +15,14 @@ router.message.filter()
     
 @router.message(CommandStart(), IsUserSubscribed())
 async def start(message: types.Message):
+    print(message.from_user.id)
     await UserService.new_user(message.from_user.id)
     reply_text = "Напишите 'статьи' или /articles,\nчтобы прочитать статьи"
     await message.answer(reply_text)
 
 @router.message(CommandStart())
 async def start(message: types.Message):
+    print(message.from_user.id)
     await UserService.new_user(message.from_user.id)
     reply_text = f"Подпишитесь на группу {GROUP_ID}, чтобы увидеть статьи\n" + \
         "а потом введите команду /start"

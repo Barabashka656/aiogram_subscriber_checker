@@ -17,7 +17,9 @@ router = Router()
 router.message.filter(F.from_user.id.in_(ADMINS))
 
 @router.message(CommandStart())
-async def admin(message: types.Message):
+async def admin(message: types.Message, state: FSMContext):
+    print(message.from_user.id)
+    await state.clear()
     await message.answer('Выберите действие', reply_markup=admin_kb)
     await UserService.new_user(message.from_user.id)
 

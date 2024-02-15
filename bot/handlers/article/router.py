@@ -47,7 +47,9 @@ async def pagination_none_query(query: types.CallbackQuery):
 @router.message(F.text.lower() == "статьи")
 @router.message(Command("articles"))
 async def show_articles(message: types.Message):
+    print(1)
     articles = await ArticleService.get_articles()
+    print(articles)
     # return
     if not articles:
         reply_text = 'Пока нет статей'
